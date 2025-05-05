@@ -1,7 +1,21 @@
 services:
-  qrcode:
+  qrcodegen:
     restart: unless-stopped
     build:
       context: ./
     ports:
       - "127.0.0.1:9019:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.qrcodegen.entrypoints=https"
+      - "traefik.http.routers.qrcodegen.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.qrcodegen.tls=true"
+      - "traefik.http.routers.qrcodegen.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.qrcodegen.service=qrcodegen"
+      - "traefik.http.services.qrcodegen.loadbalancer.server.port=80"
+      - "traefik.docker.network=web"
+
+networks:
+  web:
+    external: true
+
