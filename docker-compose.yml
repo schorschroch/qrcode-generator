@@ -1,6 +1,7 @@
-version: "3.9"
 services:
-  web:
-    image: bizzycolah/qrcode-generator:latest
+  qrcode:
+    restart: unless-stopped
+    build:
+      context: ./
     ports:
-      - "8080:80"
+      - "127.0.0.1:9019:80"

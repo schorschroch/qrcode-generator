@@ -57,6 +57,7 @@
                         id="genBtn">Generate</button>
                 </div>
                 <!--WIFI-->
+                <!--
                 <div class="flex flex-row items-center h-14 pl-1 rounded border-gray-900 bg-gray-800 border-1 text-white mb-2 w-full max-w-full">
                     <input type="text" placeholder="Wifi SSID"
                         class="h-full pl-1 text-current bg-transparent focus:outline-none w-full" id="ssidBox"
@@ -68,6 +69,8 @@
                     <button class="h-full pl-2 text-right pr-2 border-l-gray-900 border-l-1 hover:bg-gray-700 rounded-r-md"
                         id="genWifiBtn">Generate</button>
                 </div>
+                -->
+
                 <div id="qrcode" class="m-2"></div>
                 <!-- download links -->
                 <div>
@@ -88,7 +91,7 @@
         </div>
     </div>
 
-    <script src="lib/qrcode.min.js"></script>
+    <script src="lib/qrcode.js"></script>
     <script type="module">
         import { Canvg } from 'https://cdn.skypack.dev/canvg@^4.0.0'
         let lastQuery = 'https://google.com'
